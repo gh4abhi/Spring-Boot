@@ -1,23 +1,32 @@
 package com.constructor.injection;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class Controller {
 
-	Coach coach;
+	Coach criceketCoach;
+	Coach basketBallCoach;
 	
 	@Autowired
-	public Controller(Coach newCoach)
+	public Controller(@Qualifier("Cricket") Coach coachc, Coach coachb)
 	{
-		this.coach = newCoach;
+		this.criceketCoach = coachc;
+		this.basketBallCoach = coachb;
 	}
 	
-	@GetMapping("/")
-	public String getDailyWorkout()
+	@GetMapping("/cricket")
+	public String getDailyWorkoutCricket()
 	{
-		return coach.getDailyWorkout();
+		return criceketCoach.getDailyWorkout();
+	}
+	
+	@GetMapping("/basketball")
+	public String getDailyWorkoutBasketBall()
+	{
+		return basketBallCoach.getDailyWorkout();
 	}
 }
