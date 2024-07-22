@@ -11,11 +11,14 @@ public class Controller {
 	Coach criceketCoach;
 	Coach basketBallCoach;
 	
+	
+	
 	@Autowired
 	public Controller(@Qualifier("Cricket") Coach coachc, Coach coachb)
 	{
 		this.criceketCoach = coachc;
 		this.basketBallCoach = coachb;
+		System.out.println(getClass().getSimpleName());
 	}
 	
 	@GetMapping("/cricket")

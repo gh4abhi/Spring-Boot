@@ -7,6 +7,11 @@ import org.springframework.stereotype.Component;
 @Primary
 public class BasketBallCoach  implements Coach{
 
+	public BasketBallCoach()
+	{
+		System.out.println(getClass().getSimpleName());
+	}
+	
 	@Override
 	public String getDailyWorkout()
 	{
