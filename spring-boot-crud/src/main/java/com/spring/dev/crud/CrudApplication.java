@@ -25,7 +25,17 @@ public class CrudApplication {
 		return runner -> {
 			createStudent(studentDAO);
 			findAllStudent(studentDAO);
+			findByLastName(studentDAO);
 		};
+	}
+
+	private void findByLastName(StudentDAO studentDAO) {
+		System.out.println("Displaying students by given last name...");
+		List<Student> students = studentDAO.findByLastName("abhi");
+		for(Student s: students)
+		{
+			System.out.println(s.toString());
+		}
 	}
 
 	private void findAllStudent(StudentDAO studentDAO) {
