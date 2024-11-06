@@ -2,12 +2,12 @@ CREATE DATABASE IF NOT EXISTS `student_tracker`;
 
 USE `student_tracker`;
 
-DROP TABLE IF EXISTS `student`;
+DROP TABLE IF EXISTS `Employee`;
 
-CREATE TABLE `student`(
+CREATE TABLE `employee`(
 	`id` int NOT NULL AUTO_INCREMENT,
-    `first_name` varchar(45) DEFAULT NULL,
-    `last_name` varchar(45) DEFAULT NULL,
+    `fname` varchar(45) DEFAULT NULL,
+    `lname` varchar(45) DEFAULT NULL,
     `email` varchar(45) DEFAULT NULL,
 	PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
