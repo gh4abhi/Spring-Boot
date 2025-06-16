@@ -5,13 +5,11 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 
-import com.sbi.yono.landingms.model.Payer;
 import com.sbi.yono.landingms.repository.InsertPayerRepo;
-
+import com.sbi.yono.model.Payer;
 @Service
 public class AddPayerSvc {
 
@@ -29,7 +27,7 @@ public class AddPayerSvc {
 
 			insertPayerRepo.save(payer);
 			// store data in cache
-			template.opsForHash().put("Payer", payer.getPyrId(), payer);
+//			template.opsForHash().put("Payer", payer.getPyrId(), payer);
 		} catch (Exception e) {
 			return null;
 

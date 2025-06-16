@@ -30,7 +30,7 @@ public class RedisConfiguration {
 		template.setConnectionFactory(redisConnection());
 		template.setKeySerializer(new StringRedisSerializer());
 		template.setHashKeySerializer(new StringRedisSerializer());
-		template.setHashKeySerializer(new JdkSerializationRedisSerializer());
+		template.setHashValueSerializer(new JdkSerializationRedisSerializer());
 		template.setValueSerializer(new JdkSerializationRedisSerializer());
 		template.setEnableTransactionSupport(true);
 		template.afterPropertiesSet();

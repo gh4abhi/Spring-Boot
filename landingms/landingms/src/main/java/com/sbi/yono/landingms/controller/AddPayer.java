@@ -11,8 +11,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.sbi.yono.landingms.model.Payer;
 import com.sbi.yono.landingms.service.AddPayerSvc;
+import com.sbi.yono.landingms.service.JavaEmailService;
+import com.sbi.yono.model.Email;
+import com.sbi.yono.model.Payer;
 
 @RestController
 @EnableCaching
@@ -20,6 +22,10 @@ public class AddPayer {
 	
 	@Autowired
 	AddPayerSvc addpayersvc;
+	
+	@Autowired
+	JavaEmailService emailsvc;
+	
 	
 //	@Autowired
 //	public AddPayer(AddPayerSvc addpayersvc) {
@@ -54,6 +60,15 @@ public class AddPayer {
 	public Payer getPayerById(@PathVariable Integer id) {
 		
 		return addpayersvc.getPayer(id);
+	
+	}
+	
+	@RequestMapping("/sendmail")
+	
+	public String sendMail(@RequestBody Email email) {
+		
+		
+		return emailsvc.sendMail(email.getRecipient(), email.getBody(), email.getSubject(),email.getCc(),email.getFromMail());
 	
 	}
 }

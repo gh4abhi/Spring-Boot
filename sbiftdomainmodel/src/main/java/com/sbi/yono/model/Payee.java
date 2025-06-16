@@ -1,4 +1,4 @@
-package com.sbi.yono.beneficiaryms.model;
+package com.sbi.yono.model;
 
 import lombok.Data;
 

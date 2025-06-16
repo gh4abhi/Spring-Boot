@@ -1,24 +1,26 @@
-package com.sbi.yono.beneficiaryms.model;
+package com.revision.crud.entity;
 
-import java.io.Serializable;
-
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.Data;
 
-@Data
 @Entity
-//@RedisHash("Payer")
-public class Payer  implements Serializable{
+@Data
+public class AnimeDtls {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	Integer pyrId;
-	String pyrName;
-	String pyrVpa;
-	String ifsc;
-    String bankName;
-
+	Integer id;
+	
+	@Column(name="Anime_Name")
+	String animeNme;
+	
+	@Column(name="Main_Character")
+	String mainChtr;
+	
+	Double rating;
+	
 }

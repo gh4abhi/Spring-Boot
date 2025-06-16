@@ -5,8 +5,9 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.sbi.yono.beneficiaryms.model.Payer;
 import com.sbi.yono.beneficiaryms.repository.InsertPayerRepo;
+import com.sbi.yono.model.Payer;
+
 
 @Service
 public class AddPayeeSVC {

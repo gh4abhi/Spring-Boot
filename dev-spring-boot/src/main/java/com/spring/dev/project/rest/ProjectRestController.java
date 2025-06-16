@@ -20,4 +20,11 @@ public class ProjectRestController {
 	{
 		return developerName;
 	}
+	
+	@GetMapping("/")
+	public String landingScreen()
+	{
+		return "Welcome!";
+	}
+	
 }
